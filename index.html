@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="CV Syafira Gita Khansa Ramadhani, pelajar SMA Gunung Madu, calon mahasiswa Bisnis Digital.">
+<title>CV - Syafira Gita Khansa Ramadhani</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ===== 1. Variabel (mode terang) ===== */
+.halaman{
+  --ink:#0e1b36;
+  --ink-teks:#eef1f8;
+  --emas:#e0bd78;
+  --emas-teks:#7a5a1c;
+  --latar:#f2f4f9;
+  --panel:#ffffff;
+  --panel-2:#e9edf6;
+  --teks:#1d2740;
+  --redup:#4d576f;
+  --garis:#d5dbea;
+  --judul:#0e1b36;
+  --font:"Plus Jakarta Sans","Segoe UI",Arial,sans-serif;
+}
+/* ===== 2. Mode gelap ===== */
+#tema:checked ~ .halaman{
+  --ink:#070d1c;
+  --emas-teks:#e0bd78;
+  --latar:#0b1226;
+  --panel:#111b36;
+  --panel-2:#16224a;
+  --teks:#e2e6f1;
+  --redup:#a9b2c8;
+  --garis:#25325a;
+  --judul:#f1f3fa;
+}
+
+/* ===== 3. Dasar ===== */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#f2f4f9}
+#tema{position:absolute;opacity:0;pointer-events:none}
+.halaman{
+  min-height:100vh;background:var(--latar);color:var(--teks);
+  font-family:var(--font);font-size:1rem;line-height:1.7;
+  transition:background .3s,color .3s;
+}
+ul{list-style:none}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--emas);outline-offset:3px}
+.lompat{position:absolute;left:-999px;top:8px;background:#fff;color:#000;padding:8px 14px;z-index:20;border-radius:8px}
+.lompat:focus{left:8px}
+.wadah{width:min(1080px,100% - 40px);margin-inline:auto}
+
+/* ===== 4. Tombol ganti mode ===== */
+.tombol-tema{
+  position:fixed;top:14px;right:14px;z-index:10;
+  display:flex;align-items:center;gap:10px;
+  padding:8px 16px;border-radius:999px;
+  background:rgba(255,255,255,.12);color:#fff;
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.35);
+  font:600 .85rem var(--font);cursor:pointer;
+}
+.tombol-tema::before{content:"Mode gelap"}
+#tema:checked ~ .tombol-tema::before{content:"Mode terang"}
+.saklar{width:34px;height:18px;border-radius:999px;background:rgba(255,255,255,.3);position:relative}
+.saklar::after{content:"";position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:var(--emas);transition:transform .25s}
+#tema:checked ~ .tombol-tema .saklar::after{transform:translateX(16px)}
+#tema:focus-visible ~ .tombol-tema{outline:3px solid var(--emas);outline-offset:3px}
+
+/* ===== 5. Hero ===== */
+.hero{
+  background:
+    radial-gradient(600px 300px at 90% 0%,rgba(224,189,120,.18),transparent 70%),
+    var(--ink);
+  color:var(--ink-teks);
+  padding:80px 0 110px;
+  border-radius:0 0 48px 48px;
+}
+.hero .wadah{display:flex;flex-direction:column;align-items:center;gap:32px;text-align:center}
+.hero h1{font-weight:800;font-size:clamp(2.3rem,6vw,4rem);line-height:1.05;letter-spacing:-.03em}
+.hero .peran{margin-top:16px;font-size:1.15rem;color:var(--emas);font-weight:600}
+.hero .ringkas{margin:12px auto 0;max-width:52ch;color:#c7cfe2}
+.kontak{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:28px}
+.kontak li,.kontak a{font-size:.9rem}
+.kontak li{
+  padding:8px 16px;border-radius:999px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);
+}
+.kontak b{font-weight:600;color:var(--emas);margin-right:6px}
+.kontak a{text-decoration:none}
+.kontak a:hover{text-decoration:underline}
+address{font-style:normal}
+.foto{
+  display:block;order:-1;flex:none;
+  width:220px;height:293px;                /* rasio 3:4 */
+  aspect-ratio:3/4;
+  object-fit:cover;object-position:center 25%;
+  border-radius:50% / 50%;                 /* oval sempurna */
+  overflow:hidden;
+  background:#22396a;
+  border:4px solid var(--emas);
+  box-shadow:
+    0 0 0 10px rgba(255,255,255,.07),      /* lingkar tipis */
+    0 28px 55px rgba(0,0,0,.55),           /* bayangan di bawah */
+    0 0 70px rgba(224,189,120,.35);        /* cahaya emas */
+}
+
+/* ===== 6. Isi (dua kolom) ===== */
+.isi{display:grid;grid-template-columns:1fr 330px;gap:40px;margin-top:-56px;padding-bottom:56px;align-items:start}
+.utama{
+  background:var(--panel);border-radius:28px;padding:40px;
+  box-shadow:0 18px 40px rgba(14,27,54,.10);min-width:0;
+}
+.bagian + .bagian{margin-top:36px;padding-top:32px;border-top:1px solid var(--garis)}
+.bagian h2{font-size:1.25rem;font-weight:800;letter-spacing:-.01em;color:var(--judul);margin-bottom:16px}
+.bagian h2::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--emas-teks);margin-right:10px}
+.bagian > p{max-width:64ch;color:var(--redup)}
+
+.sifat{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.sifat li{background:var(--panel-2);border-radius:16px;padding:14px 16px;font-size:.92rem;color:var(--redup)}
+.sifat strong{display:block;color:var(--judul);font-size:.98rem;margin-bottom:2px}
+
+/* Garis waktu */
+.item{position:relative;padding:0 0 22px 26px;border-left:2px solid var(--garis);margin-left:5px}
+.item:last-child{padding-bottom:0}
+.item::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--emas-teks);box-shadow:0 0 0 4px var(--panel)}
+.item h3{font-size:1.05rem;font-weight:700;color:var(--judul)}
+.item .waktu{font-size:.85rem;font-weight:600;color:var(--emas-teks)}
+.item p,.item li{color:var(--redup);font-size:.95rem}
+.item ul{margin:8px 0 0 18px;list-style:disc}
+.item li{padding:1px 0}
+
+/* ===== 7. Kolom samping ===== */
+.samping{background:var(--ink);color:var(--ink-teks);border-radius:28px;padding:32px 28px;position:sticky;top:20px}
+.samping h2{font-size:1.05rem;font-weight:800;color:var(--emas);margin-bottom:14px}
+.samping section + section{margin-top:28px}
+.pil{display:flex;flex-wrap:wrap;gap:8px}
+.pil li{padding:5px 14px;border-radius:999px;font-size:.88rem;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16)}
+.bahasa li{margin-bottom:14px;font-size:.92rem}
+.bahasa li:last-child{margin-bottom:0}
+.bahasa span{display:flex;justify-content:space-between}
+.bahasa em{font-style:normal;color:var(--emas)}
+.bar{display:block;height:6px;border-radius:99px;background:rgba(255,255,255,.14);margin-top:6px;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:99px;background:var(--emas)}
+
+.pie{padding:0 0 32px;text-align:center;font-size:.85rem;color:var(--redup)}
+
+/* ===== 8. Responsif ===== */
+@media (max-width:960px){
+  .isi{grid-template-columns:1fr}
+  .samping{position:static}
+}
+@media (max-width:720px){
+  .hero{padding:76px 0 90px;border-radius:0 0 32px 32px}
+  .hero .wadah{gap:24px}
+  .foto{width:170px;height:227px}
+  .utama{padding:28px 22px;border-radius:22px}
+  .sifat{grid-template-columns:1fr}
+}
+@media (max-width:380px){
+  .tombol-tema{font-size:.75rem;padding:6px 12px}
+}
+@media print{
+  .tombol-tema,.lompat{display:none}
+  .hero{border-radius:0}
+  .utama,.samping{box-shadow:none}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<input type="checkbox" id="tema" aria-label="Ganti mode terang atau gelap">
+<label for="tema" class="tombol-tema"><span class="saklar" aria-hidden="true"></span></label>
+
+<div class="halaman">
+  <a class="lompat" href="#isi">Lompat ke isi CV</a>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero">
+    <div class="wadah">
+      <div>
+        <h1>Syafira Gita Khansa Ramadhani</h1>
+        <p class="peran">Pelajar SMA Kelas XII | Calon mahasiswa Bisnis Digital</p>
+        <p class="ringkas">Teliti, analitis, dan mandiri. Berminat pada ekonomi, informatika, dan desain.</p>
+        <address>
+          <ul class="kontak">
+            <li><b>Email</b><a href="mailto:syafiragita466@gmail.com">syafiragita466@gmail.com</a></li>
+            <li><b>WhatsApp</b><a href="https://wa.me/6285166258471">0851-6625-8471</a></li>
+            <li><b>Instagram</b><a href="https://instagram.com/qukiess_">@qukiess_</a></li>
+            <li><b>Alamat</b>Divisi 2, PT Gunung Madu Plantations, Lampung Tengah, Lampung</li>
+          </ul>
+        </address>
+      </div>
+      <img class="foto" src="foto.png" alt="Foto Syafira Gita Khansa Ramadhani" width="220" height="293">
+    </div>
+  </header>
+
+  <div class="wadah isi">
+
+    <!-- ===== ISI UTAMA ===== -->
+    <main class="utama" id="isi">
+
+      <section class="bagian" aria-labelledby="h-profil">
+        <h2 id="h-profil">Profil</h2>
+        <p>Pelajar kelas XII SMA Gunung Madu dengan mata pelajaran pilihan Matematika, Ekonomi, dan Informatika. Saya gemar mendesain dan senang menyusun rencana anggaran. Setelah lulus, saya ingin melanjutkan kuliah di Universitas Padjadjaran, program studi Bisnis Digital.</p>
+        <ul class="sifat">
+          <li><strong>Perfeksionis dan rapi</strong>Merencanakan dengan teliti dan mengejar hasil terbaik.</li>
+          <li><strong>Cerdas dan analitis</strong>Berpikir logis, mencari solusi, dan gigih memahami materi baru.</li>
+          <li><strong>Mandiri</strong>Mampu bekerja sendiri dan bertanggung jawab atas tugasnya.</li>
+          <li><strong>Setia dan perhatian</strong>Tulus, berdedikasi, dan peka terhadap hal-hal kecil.</li>
+        </ul>
+      </section>
+
+      <section class="bagian" aria-labelledby="h-usaha">
+        <h2 id="h-usaha">Usaha</h2>
+        <article class="item">
+          <h3>Pendiri tasOo (tahu bakso)</h3>
+          <p class="waktu">Akhir kelas X sampai sekarang</p>
+          <ul>
+            <li>Mengembangkan resep bakso ayam menjadi tahu bakso dengan dua varian: original dan isi keju lumer.</li>
+            <li>Membuat sendiri resep chili oil sebagai topping pembeda.</li>
+            <li>Menyusun rencana anggaran: perkiraan modal, waktu balik modal, dan keuntungan per bulan.</li>
+            <li>Memasarkan lewat media sosial, lalu menjual langsung di sekolah sejak kelas XI.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="bagian" aria-labelledby="h-pendidikan">
+        <h2 id="h-pendidikan">Pendidikan</h2>
+        <article class="item">
+          <h3>SMA Gunung Madu</h3>
+          <p class="waktu"><time datetime="2024">2024</time> - <time datetime="2027">2027</time> | Kelas XII B</p>
+          <p>Mata pelajaran pilihan: Matematika, Ekonomi, dan Informatika.</p>
+        </article>
+      </section>
+
+      <section class="bagian" aria-labelledby="h-organisasi">
+        <h2 id="h-organisasi">Pengalaman Organisasi</h2>
+        <article class="item">
+          <h3>Pradana Putri, Pramuka</h3>
+          <p class="waktu">Kelas X sampai XII (dua periode)</p>
+          <ul>
+            <li>Menjabat di lingkup Penegak dan Tingkat Laksana (TKU).</li>
+            <li>Mengoordinasi seluruh anggota putra dan putri.</li>
+            <li>Membantu pelaksanaan latihan rutin.</li>
+            <li>Mengikuti perkemahan tingkat Kwartir Ranting (kecamatan).</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="bagian" aria-labelledby="h-panitia">
+        <h2 id="h-panitia">Pengalaman Kepanitiaan</h2>
+        <ul>
+          <li class="item"><h3>Panitia MPLS</h3></li>
+          <li class="item"><h3>Panitia Perkemahan Tingkat Kabupaten</h3></li>
+          <li class="item"><h3>Panitia LDK</h3></li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- ===== KOLOM SAMPING ===== -->
+    <aside class="samping" aria-label="Keterampilan, bahasa, dan minat">
+      <section aria-labelledby="h-skill">
+        <h2 id="h-skill">Keterampilan</h2>
+        <ul class="pil">
+          <li>Desain</li>
+          <li>Perencanaan anggaran</li>
+          <li>Dasar Informatika</li>
+          <li>Analisis dan logika</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="h-soft">
+        <h2 id="h-soft">Kemampuan Pribadi</h2>
+        <ul class="pil">
+          <li>Kepemimpinan</li>
+          <li>Koordinasi tim</li>
+          <li>Mandiri</li>
+          <li>Teliti dan rapi</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="h-bahasa">
+        <h2 id="h-bahasa">Bahasa</h2>
+        <ul class="bahasa">
+          <li><span>Bahasa Indonesia <em>Aktif</em></span><span class="bar" aria-hidden="true"><i style="width:100%"></i></span></li>
+          <li><span>Bahasa Inggris <em>Menengah</em></span><span class="bar" aria-hidden="true"><i style="width:60%"></i></span></li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="h-minat">
+        <h2 id="h-minat">Minat</h2>
+        <ul class="pil">
+          <li>Ekonomi</li>
+          <li>Informatika</li>
+          <li>Desain</li>
+          <li>Bisnis digital</li>
+        </ul>
+      </section>
+    </aside>
+
+  </div>
+
+  <footer class="pie">
+    <p>Syafira Gita Khansa Ramadhani, 2026</p>
+  </footer>
+</div>
+
+</body>
+</html>
